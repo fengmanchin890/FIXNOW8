@@ -58,12 +58,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
     ws.on('close', () => {
       // Remove from clients map
-      for (const [userId, client] of clients.entries()) {
+      clients.forEach((client, userId) => {
         if (client === ws) {
           clients.delete(userId);
-          break;
         }
-      }
+      });
     });
   });
 
@@ -116,7 +115,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           type: 'user'
         }
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('User registration error:', error);
       res.status(400).json({ message: 'Registration failed', error: error.message });
     }
@@ -194,7 +193,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           type: 'artisan'
         }
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Artisan registration error:', error);
       res.status(400).json({ message: 'Registration failed', error: error.message });
     }
@@ -260,7 +259,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const categoryData = insertServiceCategorySchema.parse(req.body);
       const category = await storage.createServiceCategory(categoryData);
       res.status(201).json(category);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Create service category error:', error);
       res.status(400).json({ message: 'Failed to create service category', error: error.message });
     }
@@ -305,7 +304,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       res.status(201).json({ ...booking, aiAnalysis });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Create booking error:', error);
       res.status(400).json({ message: 'Failed to create booking', error: error.message });
     }
@@ -477,7 +476,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
       res.status(201).json(message);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Send message error:', error);
       res.status(400).json({ message: 'Failed to send message', error: error.message });
     }
@@ -508,7 +507,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const rating = await storage.createRating(ratingData);
       res.status(201).json(rating);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Create rating error:', error);
       res.status(400).json({ message: 'Failed to create rating', error: error.message });
     }
