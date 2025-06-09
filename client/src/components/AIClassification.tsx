@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Brain, CheckCircle, AlertTriangle, Clock } from 'lucide-react';
 
 interface AIClassificationProps {

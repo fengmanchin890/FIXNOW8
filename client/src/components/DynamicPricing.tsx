@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { DollarSign, Clock, MapPin, AlertTriangle, TrendingUp, Info } from 'lucide-react';
 
 interface PricingFactors {

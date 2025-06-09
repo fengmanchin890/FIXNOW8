@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Star, Camera, MessageSquare, ThumbsUp, Flag, Award, CheckCircle } from 'lucide-react';
 
 interface RatingSystemProps {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { MapPin, Navigation, Clock, Phone, MessageSquare, Car, AlertCircle } from 'lucide-react';
 
 interface TechnicianLocation {

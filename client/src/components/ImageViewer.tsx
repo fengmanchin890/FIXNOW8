@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { X, ZoomIn, ZoomOut, RotateCw, Download, Share2, Edit, Trash2, Copy, Heart, Flag, Info, ChevronLeft, ChevronRight, Maximize, Minimize, Move, Crop, Filter, Palette, Copyright as Brightness4, Contrast, Scissors, Undo, Redo, Save, Upload, Grid3X3, Eye, EyeOff, Star, MessageSquare, Tag, Clock, User, MapPin, Camera } from 'lucide-react';
 
 interface ImageViewerProps {
