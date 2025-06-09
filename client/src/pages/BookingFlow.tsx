@@ -368,7 +368,7 @@ const BookingFlow = () => {
                     <input
                       type="text"
                       value={location}
-                      onChange={(e) => setLocation(e.target.value)}
+                      onChange={(e) => setLocationState(e.target.value)}
                       className="flex-1 border-none focus:ring-0 focus:outline-none"
                     />
                     <button 

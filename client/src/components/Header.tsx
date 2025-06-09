@@ -4,7 +4,7 @@ import { Wrench, Menu, X, User, Settings, Zap, TestTube, UserPlus, LogIn } from 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const [location] = useLocation();
 
   const navigation = [
     { name: '首頁', href: '/' },
@@ -15,7 +15,7 @@ const Header = () => {
     { name: '🧪 功能測試', href: '/test' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location === path;
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
