@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useLocation } from 'wouter';
 import { 
   Camera, 
   MapPin, 
@@ -29,11 +29,11 @@ const BookingFlow = () => {
   const [description, setDescription] = useState('');
   const [images, setImages] = useState<string[]>([]);
   const [videos, setVideos] = useState<string[]>([]);
-  const [location, setLocation] = useState('台北市大安區復興南路一段');
+  const [location, setLocationState] = useState('台北市大安區復興南路一段');
   const [scheduledTime, setScheduledTime] = useState('asap');
   const [aiClassification, setAiClassification] = useState<any>(null);
   const [isRecording, setIsRecording] = useState(false);
-  const navigate = useNavigate();
+  const [, navigate] = useLocation();
 
   const services = [
     { id: 'plumbing', name: '水管維修', icon: Droplets, price: 'NT$800-1,200', description: '水管漏水、堵塞、安裝' },
@@ -95,7 +95,7 @@ const BookingFlow = () => {
 
   const detectLocation = () => {
     // Simulate GPS detection
-    setLocation('台北市大安區復興南路一段390號12樓');
+    setLocationState('台北市大安區復興南路一段390號12樓');
   };
 
   const canProceed = () => {

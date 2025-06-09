@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useLocation } from 'wouter';
 import { Wrench, Menu, X, User, Settings, Zap, TestTube, UserPlus, LogIn } from 'lucide-react';
 
 const Header = () => {

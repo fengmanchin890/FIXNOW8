@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, Switch } from 'wouter';
 import Header from './components/Header';
 import Home from './pages/Home';
 import UserDashboard from './pages/UserDashboard';
@@ -13,22 +12,20 @@ import UserAuth from './pages/UserAuth';
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-gray-50">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/user" element={<UserDashboard />} />
-          <Route path="/user/auth" element={<UserAuth />} />
-          <Route path="/artisan" element={<ArtisanDashboard />} />
-          <Route path="/artisan/auth" element={<ArtisanAuth />} />
-          <Route path="/book" element={<BookingFlow />} />
-          <Route path="/track/:orderId" element={<TrackingPage />} />
-          <Route path="/demo" element={<FeatureDemo />} />
-          <Route path="/test" element={<FeatureTest />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/user" component={UserDashboard} />
+        <Route path="/user/auth" component={UserAuth} />
+        <Route path="/artisan" component={ArtisanDashboard} />
+        <Route path="/artisan/auth" component={ArtisanAuth} />
+        <Route path="/book" component={BookingFlow} />
+        <Route path="/track/:orderId" component={TrackingPage} />
+        <Route path="/demo" component={FeatureDemo} />
+        <Route path="/test" component={FeatureTest} />
+      </Switch>
+    </div>
   );
 }
 
