@@ -165,7 +165,7 @@ export class DatabaseStorage implements IStorage {
   async createServiceCategory(insertCategory: InsertServiceCategory): Promise<ServiceCategory> {
     const [category] = await db
       .insert(serviceCategories)
-      .values(insertCategory)
+      .values([insertCategory])
       .returning();
     return category;
   }
@@ -191,7 +191,7 @@ export class DatabaseStorage implements IStorage {
   async createBooking(insertBooking: InsertBooking): Promise<Booking> {
     const [booking] = await db
       .insert(bookings)
-      .values(insertBooking)
+      .values([insertBooking])
       .returning();
     return booking;
   }
@@ -218,7 +218,7 @@ export class DatabaseStorage implements IStorage {
   async createJobTracking(insertTracking: InsertJobTracking): Promise<JobTracking> {
     const [tracking] = await db
       .insert(jobTracking)
-      .values(insertTracking)
+      .values([insertTracking])
       .returning();
     return tracking;
   }
@@ -241,7 +241,7 @@ export class DatabaseStorage implements IStorage {
   async createMessage(insertMessage: InsertMessage): Promise<Message> {
     const [message] = await db
       .insert(messages)
-      .values(insertMessage)
+      .values([insertMessage])
       .returning();
     return message;
   }
@@ -268,7 +268,7 @@ export class DatabaseStorage implements IStorage {
   async createRating(insertRating: InsertRating): Promise<Rating> {
     const [rating] = await db
       .insert(ratings)
-      .values(insertRating)
+      .values([insertRating])
       .returning();
     
     // Update artisan rating
