@@ -9,6 +9,11 @@ import FeatureDemo from './pages/FeatureDemo';
 import FeatureTest from './pages/FeatureTest';
 import ArtisanAuth from './pages/ArtisanAuth';
 import UserAuth from './pages/UserAuth';
+import UserSchedule from './pages/UserSchedule';
+import UserRecords from './pages/UserRecords';
+import ArtisanAvailability from './pages/ArtisanAvailability';
+import ArtisanIncome from './pages/ArtisanIncome';
+import ArtisanSkills from './pages/ArtisanSkills';
 
 function App() {
   return (
@@ -18,8 +23,13 @@ function App() {
         <Route path="/" component={Home} />
         <Route path="/user" component={UserDashboard} />
         <Route path="/user/auth" component={UserAuth} />
+        <Route path="/user/schedule" component={UserSchedule} />
+        <Route path="/user/records" component={UserRecords} />
         <Route path="/artisan" component={ArtisanDashboard} />
         <Route path="/artisan/auth" component={ArtisanAuth} />
+        <Route path="/artisan/availability" component={ArtisanAvailability} />
+        <Route path="/artisan/income" component={ArtisanIncome} />
+        <Route path="/artisan/skills" component={ArtisanSkills} />
         <Route path="/book" component={BookingFlow} />
         <Route path="/track/:orderId" component={TrackingPage} />
         <Route path="/demo" component={FeatureDemo} />
