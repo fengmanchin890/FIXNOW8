@@ -11,7 +11,8 @@ import {
   History,
   Settings,
   Bell,
-  Filter
+  Filter,
+  RotateCcw
 } from 'lucide-react';
 
 const UserDashboard = () => {
@@ -294,14 +295,20 @@ const UserDashboard = () => {
                 <Plus className="mr-2 h-5 w-5" />
                 新增預約
               </Link>
-              <button className="w-full bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center">
+              <Link
+                to="/user/schedule"
+                className="w-full bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center"
+              >
                 <Calendar className="mr-2 h-5 w-5" />
                 查看行程
-              </button>
-              <button className="w-full bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center">
-                <History className="mr-2 h-5 w-5" />
+              </Link>
+              <Link
+                to="/user/records"
+                className="w-full bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center"
+              >
+                <RotateCcw className="mr-2 h-5 w-5" />
                 服務紀錄
-              </button>
+              </Link>
             </div>
           </div>
 

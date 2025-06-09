@@ -15,8 +15,10 @@ import {
   MessageSquare,
   Settings,
   Award,
-  Target
+  Target,
+  BarChart3
 } from 'lucide-react';
+import { Link } from 'wouter';
 import SmartJobDispatch from '../components/SmartJobDispatch';
 
 const ArtisanDashboard = () => {
@@ -307,18 +309,27 @@ const ArtisanDashboard = () => {
                 <Camera className="mr-2 h-5 w-5" />
                 拍照回報進度
               </button>
-              <button className="w-full bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center">
+              <Link
+                to="/artisan/availability"
+                className="w-full bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center"
+              >
                 <Clock className="mr-2 h-5 w-5" />
                 設定可用時間
-              </button>
-              <button className="w-full bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center">
-                <TrendingUp className="mr-2 h-5 w-5" />
+              </Link>
+              <Link
+                to="/artisan/income"
+                className="w-full bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center"
+              >
+                <BarChart3 className="mr-2 h-5 w-5" />
                 收入分析報告
-              </button>
-              <button className="w-full bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center">
+              </Link>
+              <Link
+                to="/artisan/skills"
+                className="w-full bg-gray-100 text-gray-700 p-3 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center"
+              >
                 <Settings className="mr-2 h-5 w-5" />
                 技能認證管理
-              </button>
+              </Link>
             </div>
           </div>
 
